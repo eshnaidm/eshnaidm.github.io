@@ -137,8 +137,14 @@
       z-index: 3; /* Make sure it's on top */
     }
 
-    .scroll-up-arrow img {
-      width: 30px; /* Adjusted size */
+    .scroll-arrow img {
+      width: 30px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
     }
   </style>
 </head>
