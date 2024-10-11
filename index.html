@@ -11,66 +11,80 @@
       font-family: Arial, sans-serif;
       background-color: #333; /* Darker background */
       color: #fff; /* White text for contrast */
+      height: 100%;
     }
-    .intro {
-      position: relative;
+
+    /* Full-screen landing page with text and smaller images */
+    .landing {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
       text-align: center;
-      padding: 100px 20px;
-      background-color: rgba(0, 0, 0, 0.7); /* Dark overlay on top of the images */
+      position: relative;
     }
-    .intro h1 {
-      font-size: 48px;
+
+    .landing h1 {
+      font-size: 64px;
       margin: 0;
+      font-weight: bold;
     }
-    .intro p {
+
+    .landing p {
       font-size: 24px;
+      max-width: 700px;
+      margin-top: 20px;
     }
+
+    /* Small grid of screenshots */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       padding: 20px;
-      position: relative;
+      max-width: 900px;
+      margin: 0 auto; /* Center the grid */
     }
+
     .grid img {
       width: 100%;
       height: auto;
+      max-width: 250px; /* Limit image size */
       filter: brightness(50%); /* Darken the images */
       transition: filter 0.3s ease;
+      border-radius: 10px;
     }
+
     .grid img:hover {
       filter: brightness(80%); /* Slightly brighten on hover */
     }
-    .intro-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Transparent dark overlay over grid */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+
+    /* Scroll arrow */
     .scroll-arrow {
       text-align: center;
       margin-top: 20px;
       cursor: pointer;
     }
+
     .scroll-arrow img {
       width: 30px;
       animation: bounce 2s infinite;
     }
+
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(10px); }
     }
+
+    /* Social media links section */
     .social-links {
       text-align: center;
       padding: 50px;
       background: #000;
     }
+
     .social-links a {
       margin: 0 10px;
       font-size: 24px;
@@ -81,29 +95,32 @@
 </head>
 <body>
 
-  <section class="grid">
-    <img src="images/screenshot1.jpg" alt="Screenshot 1">
-    <img src="images/screenshot2.jpg" alt="Screenshot 2">
-    <img src="images/screenshot3.jpg" alt="Screenshot 3">
-    <img src="images/screenshot4.jpg" alt="Screenshot 4">
-    <img src="images/screenshot5.jpg" alt="Screenshot 5">
-    <img src="images/screenshot6.jpg" alt="Screenshot 6">
-    <img src="images/screenshot7.jpg" alt="Screenshot 7">
-    <img src="images/screenshot8.jpg" alt="Screenshot 8">
-    <img src="images/screenshot9.jpg" alt="Screenshot 9">
+  <!-- Landing page with text and smaller images -->
+  <div class="landing">
+    <h1>Hi, I'm Erich</h1>
+    <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
 
-    <!-- Overlay with Intro Text -->
-    <div class="intro-overlay">
-      <h1>Hi, I'm Erich</h1>
-      <p>A Game Designer passionate about creating engaging experiences.</p>
-    </div>
-  </section>
+    <!-- Small grid of screenshots directly on the landing page -->
+    <section class="grid">
+      <img src="images/screenshot1.jpg" alt="Screenshot 1">
+      <img src="images/screenshot2.jpg" alt="Screenshot 2">
+      <img src="images/screenshot3.jpg" alt="Screenshot 3">
+      <img src="images/screenshot4.jpg" alt="Screenshot 4">
+      <img src="images/screenshot5.jpg" alt="Screenshot 5">
+      <img src="images/screenshot6.jpg" alt="Screenshot 6">
+      <img src="images/screenshot7.jpg" alt="Screenshot 7">
+      <img src="images/screenshot8.jpg" alt="Screenshot 8">
+      <img src="images/screenshot9.jpg" alt="Screenshot 9">
+    </section>
+  </div>
 
+  <!-- Scroll arrow to indicate more content -->
   <div class="scroll-arrow">
     <p>Scroll down</p>
     <img src="arrow-down.png" alt="Scroll Arrow">
   </div>
 
+  <!-- Social media links section -->
   <section class="social-links">
     <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
     <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
