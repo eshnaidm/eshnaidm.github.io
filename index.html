@@ -1,1 +1,89 @@
-Hello World 121212122121212121
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erich's Portfolio</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .intro {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      background: #fafafa;
+    }
+    .grid img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s;
+    }
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+    .scroll-arrow {
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .scroll-arrow img {
+      width: 30px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    .social-links {
+      text-align: center;
+      padding: 50px;
+      background: #fff;
+    }
+    .social-links a {
+      margin: 0 10px;
+      font-size: 24px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="intro">
+    <h1>Hi, I'm Erich</h1>
+    <p>A Game Designer passionate about creating engaging experiences.</p>
+  </section>
+
+  <section class="grid">
+    <img src="screenshot1.jpg" alt="Screenshot 1">
+    <img src="screenshot2.jpg" alt="Screenshot 2">
+    <img src="screenshot3.jpg" alt="Screenshot 3">
+    <img src="screenshot4.jpg" alt="Screenshot 4">
+    <img src="screenshot5.jpg" alt="Screenshot 5">
+    <img src="screenshot6.jpg" alt="Screenshot 6">
+    <img src="screenshot7.jpg" alt="Screenshot 7">
+    <img src="screenshot8.jpg" alt="Screenshot 8">
+    <img src="screenshot9.jpg" alt="Screenshot 9">
+  </section>
+
+  <div class="scroll-arrow">
+    <p>Scroll down</p>
+    <img src="arrow-down.png" alt="Scroll Arrow">
+  </div>
+
+  <section class="social-links">
+    <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
+  </section>
+
+</body>
+</html>
