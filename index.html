@@ -80,6 +80,7 @@
       transform: translateX(-50%);
       cursor: pointer;
       z-index: 3; /* Make sure it's on top */
+      background: transparent; /* Transparent background */
     }
 
     .scroll-arrow img {
@@ -127,14 +128,15 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Scroll up arrow in social section (at the top) */
+    /* Scroll up arrow in social section (now at the bottom) */
     .scroll-up-arrow {
       position: absolute;
-      top: 20px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       cursor: pointer;
       z-index: 3; /* Ensure it's on top */
+      background: transparent; /* Transparent background */
     }
 
     .scroll-up-arrow img {
@@ -181,7 +183,7 @@
       <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
     </div>
 
-    <!-- Scroll up arrow at the top of the social section -->
+    <!-- Scroll up arrow at the bottom of the social section -->
     <div class="scroll-up-arrow">
       <a href="#top">
         <img src="images/arrow-up.png" alt="Scroll Up Arrow">
