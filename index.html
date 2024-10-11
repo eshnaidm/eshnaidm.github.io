@@ -12,49 +12,64 @@
       background-color: #333; /* Darker background */
       color: #fff; /* White text for contrast */
       height: 100%;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
-    /* Full-screen landing page with text and smaller images */
+    /* Full-screen landing page with images and intro text overlay */
     .landing {
+      position: relative;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      position: relative;
     }
 
-    .landing h1 {
+    /* Intro text overlay */
+    .intro-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      z-index: 10; /* Make sure text is on top of images */
+      text-align: center;
+    }
+
+    .intro-overlay h1 {
       font-size: 64px;
       margin: 0;
       font-weight: bold;
     }
 
-    .landing p {
+    .intro-overlay p {
       font-size: 24px;
       max-width: 700px;
       margin-top: 20px;
     }
 
-    /* Small grid of screenshots */
+    /* Grid of images spanning full width and height, with 16:9 ratio */
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      grid-template-rows: repeat(3, 1fr); /* 3 rows */
       gap: 10px;
-      padding: 20px;
-      max-width: 900px;
-      margin: 0 auto; /* Center the grid */
+      width: 100%;
+      height: 100vh; /* Full height of the landing section */
+      position: relative;
     }
 
     .grid img {
       width: 100%;
-      height: auto;
-      max-width: 250px; /* Limit image size */
+      height: 100%;
+      object-fit: cover; /* Ensure images fill the area */
+      aspect-ratio: 16 / 9; /* Force 16:9 aspect ratio */
       filter: brightness(50%); /* Darken the images */
       transition: filter 0.3s ease;
-      border-radius: 10px;
     }
 
     .grid img:hover {
@@ -95,12 +110,9 @@
 </head>
 <body>
 
-  <!-- Landing page with text and smaller images -->
+  <!-- Landing page with images and intro text overlay -->
   <div class="landing">
-    <h1>Hi, I'm Erich</h1>
-    <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
-
-    <!-- Small grid of screenshots directly on the landing page -->
+    <!-- Grid of images covering the landing page -->
     <section class="grid">
       <img src="images/screenshot1.jpg" alt="Screenshot 1">
       <img src="images/screenshot2.jpg" alt="Screenshot 2">
@@ -112,6 +124,12 @@
       <img src="images/screenshot8.jpg" alt="Screenshot 8">
       <img src="images/screenshot9.jpg" alt="Screenshot 9">
     </section>
+
+    <!-- Overlay with intro text -->
+    <div class="intro-overlay">
+      <h1>Hi, I'm Erich</h1>
+      <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
+    </div>
   </div>
 
   <!-- Scroll arrow to indicate more content -->
@@ -122,7 +140,7 @@
 
   <!-- Social media links section -->
   <section class="social-links">
-    <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/ target="_blank">LinkedIn</a>
     <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
   </section>
 
