@@ -100,6 +100,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      position: relative;
     }
 
     .social-section h2 {
@@ -126,14 +127,18 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Scroll to top arrow */
+    /* Scroll to top arrow in social section */
     .scroll-up-arrow {
       position: absolute;
-      top: 20px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       cursor: pointer;
       z-index: 3; /* Make sure it's on top */
+    }
+
+    .scroll-up-arrow img {
+      width: 30px; /* Adjusted size */
     }
   </style>
 </head>
@@ -173,7 +178,8 @@
       <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
       <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
     </div>
-    <!-- Scroll up arrow -->
+
+    <!-- Scroll up arrow inside social section -->
     <div class="scroll-up-arrow">
       <a href="#top">
         <img src="images/arrow-up.png" alt="Scroll Up Arrow">
