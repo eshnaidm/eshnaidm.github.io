@@ -72,7 +72,7 @@
       margin-top: 10px;
     }
 
-    /* Scroll arrow */
+    /* Scroll down arrow */
     .scroll-arrow {
       position: absolute;
       bottom: 20px;
@@ -127,25 +127,21 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Scroll to top arrow in social section */
+    /* Scroll up arrow in social section (at the top) */
     .scroll-up-arrow {
       position: absolute;
-      bottom: 20px;
+      top: 20px;
       left: 50%;
       transform: translateX(-50%);
       cursor: pointer;
-      z-index: 3; /* Make sure it's on top */
+      z-index: 3; /* Ensure it's on top */
     }
 
-    .scroll-arrow img {
-      width: 30px;
-      animation: bounce 2s infinite;
+    .scroll-up-arrow img {
+      width: 30px; /* Adjusted size */
+      animation: bounce 2s infinite; /* Added bounce animation */
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
   </style>
 </head>
 <body>
@@ -169,7 +165,7 @@
       <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
     </div>
     
-    <!-- Scroll arrow to social section -->
+    <!-- Scroll down arrow to social section -->
     <div class="scroll-arrow">
       <a href="#social-section">
         <img src="images/arrow-down.png" alt="Scroll Arrow">
@@ -185,7 +181,7 @@
       <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
     </div>
 
-    <!-- Scroll up arrow inside social section -->
+    <!-- Scroll up arrow at the top of the social section -->
     <div class="scroll-up-arrow">
       <a href="#top">
         <img src="images/arrow-up.png" alt="Scroll Up Arrow">
