@@ -11,7 +11,7 @@
       font-family: Arial, sans-serif;
       background-color: #333; /* Dark background */
       color: #fff; /* White text for contrast */
-      scroll-behavior: smooth; /* Smooth scrolling between sections */
+      scroll-behavior: smooth; /* Smooth scrolling */
     }
 
     /* Full-screen landing page */
@@ -21,6 +21,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden; /* Ensure content stays within bounds */
     }
 
     /* Grid of images spanning full width and height */
@@ -44,6 +45,29 @@
 
     .grid img:hover {
       filter: brightness(80%); /* Slightly brighten on hover */
+    }
+
+    /* Intro overlay */
+    .intro-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .intro-overlay h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .intro-overlay p {
+      font-size: 18px;
+      margin-top: 10px;
     }
 
     /* Scroll arrow */
@@ -99,12 +123,22 @@
     .social-section a:hover {
       background: rgba(255, 255, 255, 0.2);
     }
+
+    /* Scroll to top arrow */
+    .scroll-up-arrow {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      z-index: 20;
+    }
   </style>
 </head>
 <body>
 
   <!-- Landing page with image grid -->
-  <div class="landing">/p>
+  <div class="landing" id="top">
     <section class="grid">
       <img src="images/screenshot1.jpg" alt="Screenshot 1">
       <img src="images/screenshot2.jpg" alt="Screenshot 2">
@@ -118,12 +152,11 @@
     </section>
 
     <div class="intro-overlay">
-        <h1>Hi, I'm Erich</h1>
-        <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
-      </div>
+      <h1>Hi, I'm Erich</h1>
+      <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
     </div>
     
-    <!-- Scroll arrow -->
+    <!-- Scroll arrow to social section -->
     <div class="scroll-arrow">
       <a href="#social-section">
         <img src="images/arrow-down.png" alt="Scroll Arrow">
@@ -137,6 +170,13 @@
     <div class="links">
       <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
       <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
+    </div>
+    <!-- Scroll up arrow -->
+    <div class="scroll-up-arrow">
+      <a href="#top">
+        <img src="images/arrow-up.png" alt="Scroll Up Arrow">
+      </a>
+    </div>
   </section>
 
 </body>
