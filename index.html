@@ -88,7 +88,7 @@
     }
 
     .scroll-up-arrow {
-      top: 20px; /* Top position for scroll up arrow */
+      bottom: 20px; /* Bottom position for scroll up arrow */
     }
 
     /* Make arrows more visible with glow */
@@ -103,17 +103,15 @@
       filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); /* Even brighter on hover */
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
-
     /* Arrow labels */
     .scroll-arrow p, .scroll-up-arrow p {
       font-size: 16px;
       color: #fff;
       margin-bottom: 5px; /* Space between text and arrow */
+      background: transparent; /* Make background transparent */
+      padding: 0; /* Remove any padding */
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for visibility */
+      transition: background 0.3s ease; /* Smooth transition */
     }
 
     /* Social media section after scrolling */
@@ -191,7 +189,7 @@
       <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
     </div>
 
-    <!-- Scroll up arrow with label at the top of the social section -->
+    <!-- Scroll up arrow with label at the bottom of the social section -->
     <div class="scroll-up-arrow">
       <p>Scroll Up</p>
       <a href="#top">
