@@ -76,11 +76,12 @@
     /* Projects section */
     .projects-container {
       display: flex;
-      justify-content: center;
+      justify-content: center; /* Center the projects */
       gap: 30px;
-      margin-top: 50px;
+      margin: 40px auto; /* Center horizontally with auto margins */
       z-index: 2; /* Ensuring it stays above background */
       position: relative;
+      max-width: 900px; /* Limit width for better layout */
     }
 
     .project {
@@ -95,6 +96,7 @@
 
     .project:hover {
       transform: scale(1.05); /* Slightly enlarge on hover */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
     }
 
     .project h3 {
@@ -118,12 +120,12 @@
     /* Popup image style */
     .project img {
       width: 100%;
-      height: 150px;
+      height: 150px; /* Fixed height for images */
       object-fit: cover;
       border-radius: 10px;
       margin-top: 10px;
       transition: opacity 0.3s ease;
-      opacity: 0;
+      opacity: 0; /* Start hidden */
     }
 
     .project:hover img {
@@ -229,21 +231,21 @@
     <div class="projects-container">
       <div class="project">
         <h3>Project 1</h3>
-        <a href="https://github.com/eshnaidm" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
-        <img src="images/project1.jpg" alt="Project 1 image">
+        <a href="https://github.com/eshnaidm/project1" target="_blank">Game Design Document</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <img src="images/project1.jpg" alt="Project 1 Image">
       </div>
       <div class="project">
         <h3>Project 2</h3>
-        <a href="https://github.com/eshnaidm" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
-        <img src="images/project2.jpg" alt="Project 2 image">
+        <a href="https://github.com/eshnaidm/project2" target="_blank">Game Design Document</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <img src="images/project2.jpg" alt="Project 2 Image">
       </div>
       <div class="project">
         <h3>Project 3</h3>
-        <a href="https://github.com/eshnaidm" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
-        <img src="images/project3.jpg" alt="Project 3 image">
+        <a href="https://github.com/eshnaidm/project3" target="_blank">Game Design Document</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <img src="images/project3.jpg" alt="Project 3 Image">
       </div>
     </div>
 
