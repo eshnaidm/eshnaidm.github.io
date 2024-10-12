@@ -20,8 +20,9 @@
       position: relative;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: flex-start; /* Aligning items slightly upwards */
+      justify-content: center; /* Centering content horizontally */
+      align-items: center; /* Centering content vertically */
+      flex-direction: column; /* Stack intro and projects vertically */
       overflow: hidden; /* Ensure content stays within bounds */
     }
 
@@ -60,7 +61,7 @@
       background: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
       padding: 20px;
       border-radius: 10px;
-      margin-top: 20px; /* Moved upwards */
+      margin-bottom: 20px; /* Space below the intro */
     }
 
     .intro-overlay h1 {
@@ -78,10 +79,10 @@
       display: flex;
       justify-content: center; /* Center the projects */
       gap: 30px;
-      margin: 40px auto; /* Center horizontally with auto margins */
       z-index: 2; /* Ensuring it stays above background */
       position: relative;
       max-width: 900px; /* Limit width for better layout */
+      flex-wrap: wrap; /* Allow wrapping if needed */
     }
 
     .project {
