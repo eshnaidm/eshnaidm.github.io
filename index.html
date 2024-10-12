@@ -103,6 +103,12 @@
       filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); /* Even brighter on hover */
     }
 
+    /* Bounce animation */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
     /* Arrow labels */
     .scroll-arrow p, .scroll-up-arrow p {
       font-size: 16px;
