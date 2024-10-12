@@ -21,7 +21,7 @@
       height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* Aligning items slightly upwards */
       overflow: hidden; /* Ensure content stays within bounds */
     }
 
@@ -58,8 +58,9 @@
       z-index: 2;
       text-align: center;
       background: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
-      padding: 30px;
+      padding: 20px;
       border-radius: 10px;
+      margin-top: 20px; /* Moved upwards */
     }
 
     .intro-overlay h1 {
@@ -70,6 +71,63 @@
     .intro-overlay p {
       font-size: 18px;
       margin-top: 10px;
+    }
+
+    /* Projects section */
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      z-index: 2; /* Ensuring it stays above background */
+      position: relative;
+    }
+
+    .project {
+      background: rgba(0, 0, 0, 0.8); /* Dark background */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      width: 300px; /* Define width of each project */
+      position: relative;
+    }
+
+    .project:hover {
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    .project h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .project a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .project p {
+      margin-top: 10px;
+    }
+
+    /* Popup image style */
+    .project img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 10px;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .project:hover img {
+      opacity: 1; /* Show image on hover */
     }
 
     /* Scroll arrows */
@@ -98,7 +156,7 @@
       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)); /* Strong glow */
       transition: filter 0.3s ease; /* Smooth glow transition */
     }
-    
+
     .scroll-up-arrow img:hover, .scroll-arrow img:hover {
       filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); /* Even brighter on hover */
     }
@@ -107,17 +165,6 @@
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
-    }
-
-    /* Arrow labels */
-    .scroll-arrow p, .scroll-up-arrow p {
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 5px; /* Space between text and arrow */
-      background: transparent; /* Make background transparent */
-      padding: 0; /* Remove any padding */
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for visibility */
-      transition: background 0.3s ease; /* Smooth transition */
     }
 
     /* Social media section after scrolling */
@@ -178,6 +225,28 @@
       <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
     </div>
     
+    <!-- Projects section -->
+    <div class="projects-container">
+      <div class="project">
+        <h3>Project 1</h3>
+        <a href="https://github.com/eshnaidm" target="_blank">Game Design Document</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        <img src="images/project1.jpg" alt="Project 1 image">
+      </div>
+      <div class="project">
+        <h3>Project 2</h3>
+        <a href="https://github.com/eshnaidm" target="_blank">Game Design Document</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        <img src="images/project2.jpg" alt="Project 2 image">
+      </div>
+      <div class="project">
+        <h3>Project 3</h3>
+        <a href="https://github.com/eshnaidm" target="_blank">Game Design Document</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        <img src="images/project3.jpg" alt="Project 3 image">
+      </div>
+    </div>
+
     <!-- Scroll down arrow with label -->
     <div class="scroll-arrow">
       <p>Scroll Down</p>
