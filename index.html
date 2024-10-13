@@ -83,6 +83,7 @@
       position: relative;
       max-width: 900px; /* Limit width for better layout */
       flex-wrap: wrap; /* Allow wrapping if needed */
+      margin-top: 20px; /* Add margin above projects */
     }
 
     .project {
@@ -134,7 +135,7 @@
     }
 
     /* Scroll arrows */
-    .scroll-arrow, .scroll-up-arrow {
+    .scroll-arrow {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -142,25 +143,18 @@
       z-index: 3; /* Make sure it's on top */
       background: transparent; /* Transparent background */
       text-align: center;
-    }
-
-    .scroll-arrow {
-      bottom: 20px; /* Bottom position for scroll down arrow */
-    }
-
-    .scroll-up-arrow {
-      bottom: 20px; /* Bottom position for scroll up arrow */
+      bottom: 20px; /* Position above the bottom */
     }
 
     /* Make arrows more visible with glow */
-    .scroll-arrow img, .scroll-up-arrow img {
+    .scroll-arrow img {
       width: 50px; /* Larger size for visibility */
       animation: bounce 2s infinite;
       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)); /* Strong glow */
       transition: filter 0.3s ease; /* Smooth glow transition */
     }
 
-    .scroll-up-arrow img:hover, .scroll-arrow img:hover {
+    .scroll-arrow img:hover {
       filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); /* Even brighter on hover */
     }
 
@@ -213,6 +207,7 @@
       .projects-container {
         flex-direction: column; /* Stack projects vertically */
         align-items: center; /* Center projects */
+        gap: 20px; /* Space between projects */
       }
       .project {
         width: 90%; /* Full width on small screens */
@@ -281,7 +276,7 @@
       </div>
     </div>
 
-    <div class="scroll-arrow">
+    <div class="scroll-arrow" onclick="scrollToSocial()">
       <img src="https://img.icons8.com/ios-filled/50/ffffff/chevron-down.png" alt="Scroll Down">
     </div>
   </div>
@@ -290,10 +285,17 @@
   <div class="social-section" id="social">
     <h2>Connect with Me</h2>
     <div class="links">
-      <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </div>
   </div>
+
+  <script>
+    function scrollToSocial() {
+      document.getElementById('social').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
