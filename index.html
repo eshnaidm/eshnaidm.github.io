@@ -65,12 +65,12 @@
     }
 
     .intro-overlay h1 {
-      font-size: 48px;
+      font-size: 3rem; /* Responsive font size */
       margin: 0;
     }
 
     .intro-overlay p {
-      font-size: 18px;
+      font-size: 1rem; /* Responsive font size */
       margin-top: 10px;
     }
 
@@ -101,7 +101,7 @@
     }
 
     .project h3 {
-      font-size: 24px;
+      font-size: 1.5rem; /* Responsive font size */
       margin-bottom: 10px;
     }
 
@@ -182,7 +182,7 @@
     }
 
     .social-section h2 {
-      font-size: 48px;
+      font-size: 3rem; /* Responsive font size */
       margin-bottom: 20px;
     }
 
@@ -192,7 +192,7 @@
     }
 
     .social-section a {
-      font-size: 24px;
+      font-size: 1.5rem; /* Responsive font size */
       text-decoration: none;
       color: #fff;
       background: rgba(0, 0, 0, 0.5);
@@ -203,6 +203,41 @@
 
     .social-section a:hover {
       background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+      }
+      .projects-container {
+        flex-direction: column; /* Stack projects vertically */
+        align-items: center; /* Center projects */
+      }
+      .project {
+        width: 90%; /* Full width on small screens */
+      }
+      .intro-overlay h1 {
+        font-size: 2.5rem; /* Smaller font size */
+      }
+      .intro-overlay p {
+        font-size: 1rem; /* Smaller font size */
+      }
+      .social-section h2 {
+        font-size: 2.5rem; /* Smaller font size */
+      }
+      .social-section a {
+        font-size: 1.25rem; /* Smaller font size */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+      }
+      .projects-container {
+        width: 100%; /* Full width on very small screens */
+      }
     }
 
   </style>
@@ -224,57 +259,41 @@
     </section>
 
     <div class="intro-overlay">
-      <h1>Hi, I'm Erich</h1>
-      <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
+      <h1>Welcome to My Portfolio</h1>
+      <p>Explore my projects and see what I've been working on.</p>
     </div>
-    
-    <!-- Projects section -->
+
     <div class="projects-container">
       <div class="project">
-        <h3>Project 1</h3>
-        <a href="https://github.com/eshnaidm/project1" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <img src="images/project1.jpg" alt="Project 1 Image">
+        <h3>Project Title 1</h3>
+        <p>Short description of Project 1.</p>
+        <img src="images/project1.jpg" alt="Project 1 Thumbnail">
       </div>
       <div class="project">
-        <h3>Project 2</h3>
-        <a href="https://github.com/eshnaidm/project2" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <img src="images/project2.jpg" alt="Project 2 Image">
+        <h3>Project Title 2</h3>
+        <p>Short description of Project 2.</p>
+        <img src="images/project2.jpg" alt="Project 2 Thumbnail">
       </div>
       <div class="project">
-        <h3>Project 3</h3>
-        <a href="https://github.com/eshnaidm/project3" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <img src="images/project3.jpg" alt="Project 3 Image">
+        <h3>Project Title 3</h3>
+        <p>Short description of Project 3.</p>
+        <img src="images/project3.jpg" alt="Project 3 Thumbnail">
       </div>
     </div>
 
-    <!-- Scroll down arrow with label -->
     <div class="scroll-arrow">
-      <p>Scroll Down</p>
-      <a href="#social-section">
-        <img src="images/arrow-down.png" alt="Scroll Arrow">
-      </a>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/chevron-down.png" alt="Scroll Down">
     </div>
   </div>
 
-  <!-- Social media section with large image and links -->
-  <section id="social-section" class="social-section">
+  <!-- Social media links section -->
+  <div class="social-section" id="social">
     <h2>Connect with Me</h2>
     <div class="links">
       <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
       <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
     </div>
-
-    <!-- Scroll up arrow with label at the bottom of the social section -->
-    <div class="scroll-up-arrow">
-      <p>Scroll Up</p>
-      <a href="#top">
-        <img src="images/arrow-up.png" alt="Scroll Up Arrow">
-      </a>
-    </div>
-  </section>
+  </div>
 
 </body>
 </html>
