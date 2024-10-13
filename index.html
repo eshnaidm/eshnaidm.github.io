@@ -279,6 +279,11 @@
     <div class="scroll-arrow" onclick="scrollToSocial()">
       <img src="https://img.icons8.com/ios-filled/50/ffffff/chevron-down.png" alt="Scroll Down">
     </div>
+
+    <!-- Scroll up arrow -->
+    <div class="scroll-arrow" style="bottom: 70px;" onclick="scrollToTop()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/chevron-up.png" alt="Scroll Up">
+    </div>
   </div>
 
   <!-- Social media links section -->
@@ -294,6 +299,10 @@
   <script>
     function scrollToSocial() {
       document.getElementById('social').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToTop() {
+      document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 
