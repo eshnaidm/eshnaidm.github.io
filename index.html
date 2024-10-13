@@ -145,6 +145,16 @@
       text-align: center;
     }
 
+    /* Scroll down arrow */
+    .scroll-arrow.down {
+      bottom: 20px; /* Position at the bottom of the landing page */
+    }
+
+    /* Scroll up arrow */
+    .scroll-arrow.up {
+      bottom: 20px; /* Position at the bottom of the social section */
+    }
+
     /* Make arrows more visible with glow */
     .scroll-arrow img {
       width: 50px; /* Larger size for visibility */
@@ -254,9 +264,10 @@
 
     <div class="intro-overlay">
       <h1>Welcome to My Portfolio</h1>
-      <p>Explore my projects and see what I've been working on.</p>
+      <p>Explore my projects and see what I've been working on!</p>
     </div>
 
+    <!-- Projects section -->
     <div class="projects-container">
       <div class="project">
         <h3>Project 1</h3>
@@ -277,8 +288,10 @@
         <img src="images/project3.jpg" alt="Project 3 Image">
       </div>
     </div>
-    <div class="scroll-arrow" onclick="scrollToSection('social-section')">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/up.png" alt="Scroll Up">
+
+    <!-- Scroll down arrow -->
+    <div class="scroll-arrow down" onclick="scrollToSection('social-section')">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/down.png" alt="Scroll Down">
     </div>
   </div>
 
@@ -289,6 +302,11 @@
       <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
       <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
       <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+    </div>
+
+    <!-- Scroll up arrow -->
+    <div class="scroll-arrow up" onclick="scrollToSection('top')">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/up.png" alt="Scroll Up">
     </div>
   </div>
 
