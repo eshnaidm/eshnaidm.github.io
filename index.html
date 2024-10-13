@@ -136,14 +136,13 @@
 
     /* Scroll arrows */
     .scroll-arrow {
-      position: absolute;
+      position: fixed;
       left: 50%;
       transform: translateX(-50%);
       cursor: pointer;
       z-index: 3; /* Make sure it's on top */
       background: transparent; /* Transparent background */
       text-align: center;
-      bottom: 20px; /* Position above the bottom */
     }
 
     /* Make arrows more visible with glow */
@@ -260,51 +259,44 @@
 
     <div class="projects-container">
       <div class="project">
-        <h3>Project Title 1</h3>
+        <h3>Project 1</h3>
         <p>Short description of Project 1.</p>
-        <img src="images/project1.jpg" alt="Project 1 Thumbnail">
+        <a href="https://linktoproject1.com" target="_blank">View Project</a>
+        <img src="images/project1.jpg" alt="Project 1 Image">
       </div>
       <div class="project">
-        <h3>Project Title 2</h3>
+        <h3>Project 2</h3>
         <p>Short description of Project 2.</p>
-        <img src="images/project2.jpg" alt="Project 2 Thumbnail">
+        <a href="https://linktoproject2.com" target="_blank">View Project</a>
+        <img src="images/project2.jpg" alt="Project 2 Image">
       </div>
       <div class="project">
-        <h3>Project Title 3</h3>
+        <h3>Project 3</h3>
         <p>Short description of Project 3.</p>
-        <img src="images/project3.jpg" alt="Project 3 Thumbnail">
+        <a href="https://linktoproject3.com" target="_blank">View Project</a>
+        <img src="images/project3.jpg" alt="Project 3 Image">
       </div>
     </div>
-
-    <div class="scroll-arrow" onclick="scrollToSocial()">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/chevron-down.png" alt="Scroll Down">
-    </div>
-
-    <!-- Scroll up arrow -->
-    <div class="scroll-arrow" style="bottom: 70px;" onclick="scrollToTop()">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/chevron-up.png" alt="Scroll Up">
+    <div class="scroll-arrow" onclick="scrollToSection('social-section')">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/up.png" alt="Scroll Up">
     </div>
   </div>
 
-  <!-- Social media links section -->
-  <div class="social-section" id="social">
+  <!-- Social media section -->
+  <div class="social-section" id="social-section">
     <h2>Connect with Me</h2>
     <div class="links">
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://github.com" target="_blank">GitHub</a>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+      <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
     </div>
   </div>
 
   <script>
-    function scrollToSocial() {
-      document.getElementById('social').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function scrollToTop() {
-      document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
-
 </body>
 </html>
