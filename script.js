@@ -1,30 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll functionality
+    const mainPage = document.querySelector('.main-page');
+    const connectSection = document.querySelector('.connect-section');
     const scrollArrow = document.querySelector('.scroll-arrow');
-    const portfolioSection = document.querySelector('.portfolio-section');
+    const scrollUpArrow = document.querySelector('.scroll-up-arrow');
 
+    // Show/hide scroll arrows based on scroll position
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.documentElement.scrollHeight;
+
+        if (scrollPosition < windowHeight / 2) {
+            scrollArrow.style.display = 'flex';
+            scrollUpArrow.style.display = 'none';
+        } else {
+            scrollArrow.style.display = 'none';
+            scrollUpArrow.style.display = 'flex';
+        }
+    });
+
+    // Smooth scroll functionality
     scrollArrow.addEventListener('click', () => {
-        portfolioSection.scrollIntoView({ 
-            behavior: 'smooth'
-        });
+        connectSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Project cards hover effect
-    const projectCards = document.querySelectorAll('.project-card');
+    scrollUpArrow.addEventListener('click', () => {
+        mainPage.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Game items hover effect
+    const gameItems = document.querySelectorAll('.game-item');
     
-    projectCards.forEach(card => {
-        const projectInfo = card.querySelector('.project-info');
+    gameItems.forEach(item => {
+        const overlay = item.querySelector('.game-overlay');
         
-        card.addEventListener('mouseenter', () => {
-            projectInfo.style.opacity = '1';
+        item.addEventListener('mouseenter', () => {
+            overlay.style.opacity = '1';
         });
         
-        card.addEventListener('mouseleave', () => {
-            projectInfo.style.opacity = '0';
+        item.addEventListener('mouseleave', () => {
+            overlay.style.opacity = '0';
         });
     });
 
-    // Optional: Add fade-in animation for elements as they come into view
+    // Initialize scroll arrow visibility
+    scrollUpArrow.style.display = 'none';
+
+    // Fade-in animation for elements
     const observerOptions = {
         threshold: 0.1
     };
@@ -38,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.project-card, .game-item, .social-icon');
+    const fadeElements = document.querySelectorAll('.game-item, .social-icon');
     fadeElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
