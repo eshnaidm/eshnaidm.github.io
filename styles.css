@@ -210,11 +210,9 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
     color: white;
     text-align: center;
+    background: #1a1a1a;
 }
 
 .connect-section::before {
@@ -224,7 +222,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.connect-content {
+    position: relative;
+    z-index: 2;
 }
 
 .connect-section h2 {
@@ -235,8 +238,6 @@ body {
 }
 
 .social-links {
-    position: relative;
-    z-index: 2;
     display: flex;
     gap: 3rem;
     margin-top: 2rem;
