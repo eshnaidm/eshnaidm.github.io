@@ -1,30 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll functionality
+    // Smooth scroll functionality for down arrow
     const scrollArrow = document.querySelector('.scroll-arrow');
-    const portfolioSection = document.querySelector('.portfolio-section');
+    const connectSection = document.querySelector('.connect-section');
 
     scrollArrow.addEventListener('click', () => {
-        portfolioSection.scrollIntoView({ 
+        connectSection.scrollIntoView({ 
             behavior: 'smooth'
         });
     });
 
-    // Project cards hover effect
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        const projectInfo = card.querySelector('.project-info');
-        
-        card.addEventListener('mouseenter', () => {
-            projectInfo.style.opacity = '1';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            projectInfo.style.opacity = '0';
+    // Smooth scroll functionality for up arrow
+    const scrollUpArrow = document.querySelector('.scroll-up-arrow');
+    const mainPage = document.querySelector('.main-page');
+
+    scrollUpArrow.addEventListener('click', () => {
+        mainPage.scrollIntoView({ 
+            behavior: 'smooth'
         });
     });
 
-    // Optional: Add fade-in animation for elements as they come into view
+    // Game items hover effect
+    const gameItems = document.querySelectorAll('.game-item');
+    
+    gameItems.forEach(item => {
+        const overlay = item.querySelector('.game-overlay');
+        
+        item.addEventListener('mouseenter', () => {
+            overlay.style.opacity = '1';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            overlay.style.opacity = '0';
+        });
+    });
+
+    // Fade-in animation for elements as they come into view
     const observerOptions = {
         threshold: 0.1
     };
@@ -38,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.project-card, .game-item, .social-icon');
+    const fadeElements = document.querySelectorAll('.game-item, .social-icon');
     fadeElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
