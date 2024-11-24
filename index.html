@@ -1,280 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erich's Portfolio</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #333; /* Dark background */
-      color: #fff; /* White text for contrast */
-      scroll-behavior: smooth; /* Smooth scrolling */
-      height: 100%;
-    }
-
-    /* Full-screen landing page */
-    .landing {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center; /* Centering content horizontally */
-      align-items: center; /* Centering content vertically */
-      flex-direction: column; /* Stack intro and projects vertically */
-      overflow: hidden; /* Ensure content stays within bounds */
-    }
-
-    /* Grid of images spanning full width and height */
-    .grid {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
-      grid-template-rows: repeat(3, 1fr); /* 3 rows */
-      gap: 10px;
-      width: 100%;
-      height: 100vh; /* Full height of the landing section */
-      z-index: 1;
-    }
-
-    .grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensure images fill the area */
-      aspect-ratio: 16 / 9; /* Force 16:9 aspect ratio */
-      filter: brightness(50%); /* Darken the images */
-      transition: filter 0.3s ease;
-    }
-
-    .grid img:hover {
-      filter: brightness(80%); /* Slightly brighten on hover */
-    }
-
-    /* Intro overlay */
-    .intro-overlay {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px; /* Space below the intro */
-    }
-
-    .intro-overlay h1 {
-      font-size: 48px;
-      margin: 0;
-    }
-
-    .intro-overlay p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    /* Projects section */
-    .projects-container {
-      display: flex;
-      justify-content: center; /* Center the projects */
-      gap: 30px;
-      z-index: 2; /* Ensuring it stays above background */
-      position: relative;
-      max-width: 900px; /* Limit width for better layout */
-      flex-wrap: wrap; /* Allow wrapping if needed */
-    }
-
-    .project {
-      background: rgba(0, 0, 0, 0.8); /* Dark background */
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      transition: transform 0.3s ease;
-      width: 300px; /* Define width of each project */
-      position: relative;
-    }
-
-    .project:hover {
-      transform: scale(1.05); /* Slightly enlarge on hover */
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
-    }
-
-    .project h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .project a {
-      color: #1e90ff;
-      text-decoration: none;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    .project p {
-      margin-top: 10px;
-    }
-
-    /* Popup image style */
-    .project img {
-      width: 100%;
-      height: 150px; /* Fixed height for images */
-      object-fit: cover;
-      border-radius: 10px;
-      margin-top: 10px;
-      transition: opacity 0.3s ease;
-      opacity: 0; /* Start hidden */
-    }
-
-    .project:hover img {
-      opacity: 1; /* Show image on hover */
-    }
-
-    /* Scroll arrows */
-    .scroll-arrow, .scroll-up-arrow {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      cursor: pointer;
-      z-index: 3; /* Make sure it's on top */
-      background: transparent; /* Transparent background */
-      text-align: center;
-    }
-
-    .scroll-arrow {
-      bottom: 20px; /* Bottom position for scroll down arrow */
-    }
-
-    .scroll-up-arrow {
-      bottom: 20px; /* Bottom position for scroll up arrow */
-    }
-
-    /* Make arrows more visible with glow */
-    .scroll-arrow img, .scroll-up-arrow img {
-      width: 50px; /* Larger size for visibility */
-      animation: bounce 2s infinite;
-      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)); /* Strong glow */
-      transition: filter 0.3s ease; /* Smooth glow transition */
-    }
-
-    .scroll-up-arrow img:hover, .scroll-arrow img:hover {
-      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); /* Even brighter on hover */
-    }
-
-    /* Bounce animation */
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Social media section after scrolling */
-    .social-section {
-      height: 100vh; /* Full-screen height for the next section */
-      background: url('https://i.imgur.com/EfskaX8.jpeg') no-repeat center center/cover; /* Large image background */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .social-section h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .social-section .links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .social-section a {
-      font-size: 24px;
-      text-decoration: none;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .social-section a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erich - Game Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="main-page">
+        <div class="intro-section">
+            <h1>Erich</h1>
+            <h2>Game Designer</h2>
+        </div>
 
-  <!-- Landing page with image grid -->
-  <div class="landing" id="top">
-    <section class="grid">
-      <img src="images/screenshot1.jpg" alt="Screenshot 1">
-      <img src="images/screenshot2.jpg" alt="Screenshot 2">
-      <img src="images/screenshot3.jpg" alt="Screenshot 3">
-      <img src="images/screenshot4.jpg" alt="Screenshot 4">
-      <img src="images/screenshot5.jpg" alt="Screenshot 5">
-      <img src="images/screenshot6.jpg" alt="Screenshot 6">
-      <img src="images/screenshot7.jpg" alt="Screenshot 7">
-      <img src="images/screenshot8.jpg" alt="Screenshot 8">
-      <img src="images/screenshot9.jpg" alt="Screenshot 9">
-    </section>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Fantasy RPG</h3>
+                    <p>An immersive role-playing game with stunning visuals and deep storyline</p>
+                </div>
+                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80');">
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Space Explorer</h3>
+                    <p>A sci-fi adventure game set in a vast universe</p>
+                </div>
+                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80');">
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Strategy Master</h3>
+                    <p>Turn-based strategy game with complex mechanics</p>
+                </div>
+                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1611996575749-79a3a250f948?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80');">
+                </div>
+            </div>
+        </div>
 
-    <div class="intro-overlay">
-      <h1>Hi, I'm Erich</h1>
-      <p>A Game Designer passionate about creating engaging experiences. Scroll down to see more of my work.</p>
-    </div>
-    
-    <!-- Projects section -->
-    <div class="projects-container">
-      <div class="project">
-        <h3>Project 1</h3>
-        <a href="https://github.com/eshnaidm/project1" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <img src="images/project1.jpg" alt="Project 1 Image">
-      </div>
-      <div class="project">
-        <h3>Project 2</h3>
-        <a href="https://github.com/eshnaidm/project2" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <img src="images/project2.jpg" alt="Project 2 Image">
-      </div>
-      <div class="project">
-        <h3>Project 3</h3>
-        <a href="https://github.com/eshnaidm/project3" target="_blank">Game Design Document</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <img src="images/project3.jpg" alt="Project 3 Image">
-      </div>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </div>
 
-    <!-- Scroll down arrow with label -->
-    <div class="scroll-arrow">
-      <p>Scroll Down</p>
-      <a href="#social-section">
-        <img src="images/arrow-down.png" alt="Scroll Arrow">
-      </a>
-    </div>
-  </div>
+    <div class="portfolio-section">
+        <div class="games-grid">
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1548484352-ea579e93b434?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+            <div class="game-item" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80'); background-size: cover;"></div>
+        </div>
 
-  <!-- Social media section with large image and links -->
-  <section id="social-section" class="social-section">
-    <h2>Connect with Me</h2>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/erich-shnaidman-0a3323279/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/eshnaidm" target="_blank">GitHub</a>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/your-profile" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/eshnaidm" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </div>
 
-    <!-- Scroll up arrow with label at the bottom of the social section -->
-    <div class="scroll-up-arrow">
-      <p>Scroll Up</p>
-      <a href="#top">
-        <img src="images/arrow-up.png" alt="Scroll Up Arrow">
-      </a>
-    </div>
-  </section>
-
+    <script src="script.js"></script>
 </body>
 </html>
