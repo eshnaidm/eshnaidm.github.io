@@ -120,13 +120,14 @@ body {
 
 .project-content {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 0;
     right: 0;
     padding: 2rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7) 50%, transparent);
-    transform: translateY(0);
+    transform: translateY(-50%);
     transition: transform 0.3s ease;
+    text-align: center;
 }
 
 .project-card:hover .project-image {
@@ -134,7 +135,7 @@ body {
 }
 
 .project-card:hover .project-content {
-    transform: translateY(0);
+    transform: translateY(-50%);
 }
 
 .project-content h3 {
@@ -237,20 +238,24 @@ body {
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 2rem;
 }
 
 .social-links a {
-    color: white;
-    font-size: 2rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
+    font-size: 3.5rem;
+    transition: all 0.3s ease;
     text-decoration: none;
+    filter: grayscale(100%);
+    opacity: 0.8;
 }
 
 .social-links a:hover {
-    color: #4a90e2;
+    color: #ffffff;
     transform: translateY(-5px);
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
