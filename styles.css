@@ -102,6 +102,8 @@ body {
     transition: transform 0.3s ease;
     cursor: pointer;
     overflow: hidden;
+    text-decoration: none;
+    display: block;
 }
 
 .project-image {
@@ -149,7 +151,7 @@ body {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     background: rgba(74, 144, 226, 0.2);
 }
 
@@ -204,16 +206,24 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 2rem;
+    align-items: center;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80');
+    background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.connect-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .connect-section h2 {
@@ -224,36 +234,23 @@ body {
 }
 
 .social-links {
+    position: relative;
+    z-index: 2;
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 2rem;
 }
 
-.social-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;
+.social-links a {
+    color: white;
     font-size: 2rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    width: 150px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
-.social-icon:hover {
-    transform: translateY(-10px);
+.social-links a:hover {
     color: #4a90e2;
-}
-
-.social-icon span {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    text-align: center;
+    transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
@@ -267,11 +264,6 @@ body {
     
     .intro-section h2 {
         font-size: 1.5rem;
-    }
-    
-    .social-icon {
-        font-size: 1.5rem;
-        width: 120px;
     }
 }
 
