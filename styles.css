@@ -17,16 +17,44 @@ body {
 
 .main-page {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
     position: relative;
+    overflow: hidden;
+}
+
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    z-index: 1;
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .intro-section {
     text-align: center;
-    padding-top: 1rem;
-    margin-bottom: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .intro-section h1 {
@@ -43,7 +71,7 @@ body {
 
 .about-me {
     max-width: 600px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -55,57 +83,38 @@ body {
     color: #ffffff;
 }
 
-.games-grid {
+.projects-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    width: 90%;
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    flex-grow: 1;
+    padding: 0 2rem;
 }
 
-.game-item {
-    aspect-ratio: 16/9;
+.project-card {
+    background: rgba(26, 26, 26, 0.8);
     border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    background-size: cover;
-    background-position: center;
 }
 
-.game-item:hover {
-    transform: scale(1.05);
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(74, 144, 226, 0.2);
 }
 
-.game-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.game-item:hover .game-overlay {
-    opacity: 1;
-}
-
-.game-overlay h3 {
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-}
-
-.game-overlay p {
+.project-content h3 {
     color: #4a90e2;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.project-content p {
+    color: #ffffff;
+    line-height: 1.4;
 }
 
 .scroll-arrow, .scroll-up-arrow {
@@ -168,6 +177,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    z-index: 2;
 }
 
 .connect-section h2 {
@@ -211,7 +221,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .games-grid {
+    .projects-container {
         grid-template-columns: repeat(2, 1fr);
     }
     
@@ -230,7 +240,11 @@ body {
 }
 
 @media (max-width: 480px) {
-    .games-grid {
+    .projects-container {
         grid-template-columns: 1fr;
+    }
+    
+    .background-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
